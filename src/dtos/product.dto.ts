@@ -5,3 +5,7 @@ export interface CreateProductDTO {
     category: string;
     inStock?: boolean;
 }
+export interface UpdateBrandDTO {
+    name?: string;
+    logoUrl?: string;
+}
