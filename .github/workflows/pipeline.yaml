@@ -1,4 +1,3 @@
-# .github/workflows/ci.yml
 name: CI - Next.js App
 
 on:
@@ -24,6 +23,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+
+      # Adicione este passo para garantir que o package-lock.json está sincronizado
+      - name: 🔄 Sync Dependencies
+        run: npm install
 
       - name: 📦 Install Dependencies
         run: npm ci
